@@ -1,0 +1,17 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+    "name": "Nuxt app",
+    "dockerComposeFile": [
+        "../../docker-compose.yml"
+    ],
+    "service": "nuxt",
+    "workspaceFolder": "/workspace",
+    "extensions": [
+        "dariofuzinato.vue-peek",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "octref.vetur",
+        "visualstudioexptteam.vscodeintellicode",
+    ],
+    "shutdownAction": "none"
+}

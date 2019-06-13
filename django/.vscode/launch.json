@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "runserver",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "console": "integratedTerminal",
+            "args": [
+                "runserver",
+                "0.0.0.0:8000",
+                "--noreload",
+                "--nothreading"
+            ],
+            "django": true
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+
+  django:
+    build:
+      context: django
+      dockerfile: .devcontainer/Dockerfile
+    command: sleep infinity
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_DATABASE=sample
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+    ports:
+      - 8000:8000
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig
+      - ./django:/workspace
+
+  nuxt:
+    build:
+      context: nuxt
+      dockerfile: .devcontainer/Dockerfile
+    command: sleep infinity
+    depends_on:
+      - django
+    environment:
+      - HOST=0.0.0.0
+    ports:
+      - 3000:3000
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig
+      - ./nuxt:/workspace
+
+  db:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=sample
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+  
