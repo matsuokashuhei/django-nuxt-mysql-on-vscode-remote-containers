@@ -16,11 +16,10 @@ Django, Nuxt.js, and MySQL development environment using Visual Studio Code Remo
 
 1. Open new window
 2. `F1` > `Remote Containers: Open Folder in Container...` and select `nuxt` folder
-:construction:
 3. Open new terminal in VS Code and run `npx create-nuxt-app .`.
 4. After `npx create-nuxt-app .`, run `npm run dev` on terminal.
 
-:construction: If you want to open both environments, open two windows in your VS Code.
+If you want to open both environments, open two windows in your VS Code. Please read [Connecting to multiple containers at once](https://code.visualstudio.com/docs/remote/containers-advanced#_connecting-to-multiple-containers-at-once) in detail.
 
 # Built-in Extensions in Development environment
 
